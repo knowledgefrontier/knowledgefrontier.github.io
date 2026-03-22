@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Units Notes | IJSO Theory - Strata STEM Guide</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../../../style.css">
+    <link rel="stylesheet" href="../../../../../navbar.css">
+    <link rel="stylesheet" href="../../ijso.css">
+</head>
+
+<body class="physics-theme">
+    <div class="grid-overlay"></div>
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <!-- Global Navbar logic -->
+    <script src="../../../../../navbar.js"></script>
+    <script>
+        window.navbarConfig = { activePage: 'olympiad', rootPath: '../../../../../' };
+    </script>
+    <main class="theory-container" style="max-width: 1100px;">
+        <div class="theory-hero reveal" style="text-align: left; margin-bottom: 0.5rem;">
+            <br><br>
+            <h1 style="font-size: 3rem; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2); display: block; padding-bottom: 1rem;">Units</h1>
+            
+            <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
+                <a href="../UnitsAndDimensions.html" class="back-theory-btn" style="margin-top: 0; font-size: 0.9rem;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Units
+                </a>
+            </div>
+        </div>
+
+        <div class="content-card reveal">
+            <!-- Section 1 -->
+            <section class="notes-section">
+                <p>Units are standards for measurement of physical quantities that need clear definitions to be useful. Without them, measurements would not make sense.</p>
+                <p>For example, "the object weighs 170" is meaningless. Perhaps it is a paper box that weighs 170 grams. But it could also be metal cube that weighs 170 kilograms. A predetermined unit needs to be placed after the number to make the measurement meaningful.</p>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="notes-section">
+                <h2>Fundamental units</h2>
+                <p>There are many possible systems of measurement that have been developed. In science, we use the International System of units (SI).</p>
+                <p>The fundamental or base units in SI are presented in the table below:</p>
+                
+                <table class="notes-table">
+                    <thead>
+                        <tr>
+                            <th>Physical Quantity</th>
+                            <th>SI Unit</th>
+                            <th>Symbol</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Mass</td><td>Kilogram</td><td>kg</td></tr>
+                        <tr><td>Length</td><td>Meter</td><td>m</td></tr>
+                        <tr><td>Time</td><td>Second</td><td>s</td></tr>
+                        <tr><td>Electric Current</td><td>Ampere</td><td>A</td></tr>
+                        <tr><td>Amount of Substance</td><td>Mole</td><td>mol</td></tr>
+                        <tr><td>Temperature</td><td>Kelvin</td><td>K</td></tr>
+                        <tr><td>Luminous Intensity</td><td>Candela</td><td>cd</td></tr>
+                    </tbody>
+                </table>
+                <p style="font-style: italic; opacity: 0.7; font-size: 0.9rem;">Note: You do not need to memorize the formal scientific definitions of these units to apply them correctly.</p>
+            </section>
+
+            <!-- Section 3 -->
+            <section class="notes-section">
+                <h2>3. Derived Units</h2>
+                <p>All other measurements are <span style="color: var(--physics-primary); font-weight: 600;">Derived Units</span>, created by combining the seven fundamental units.</p>
+                <p><strong>Example — Speed:</strong> Speed is <span class="math-highlight">Distance &divide; Time</span>. Therefore, the unit for speed is <span class="math-highlight">m/s</span> or <span class="math-highlight">m &middot; s<sup>-1</sup></span>.</p>
+                <p><strong>Special Names:</strong> For convenience, common combinations are given unique names.</p>
+                
+                <table class="notes-table">
+                    <thead>
+                        <tr>
+                            <th>SI Derived Unit</th>
+                            <th>SI Base Equivalent</th>
+                            <th>Alternative Form</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Newton (N)</td><td><span class="math-highlight">kg &middot; m &middot; s<sup>-2</sup></span></td><td>—</td></tr>
+                        <tr><td>Pascal (Pa)</td><td><span class="math-highlight">kg &middot; m<sup>-1</sup> &middot; s<sup>-2</sup></span></td><td><span class="math-highlight">N &middot; m<sup>-2</sup></span></td></tr>
+                        <tr><td>Watt (W)</td><td><span class="math-highlight">kg &middot; m<sup>2</sup> &middot; s<sup>-3</sup></span></td><td><span class="math-highlight">J &middot; s<sup>-1</sup></span></td></tr>
+                        <tr><td>Ohm (&Omega;)</td><td><span class="math-highlight">kg &middot; m<sup>2</sup> &middot; s<sup>-3</sup> &middot; A<sup>-2</sup></span></td><td><span class="math-highlight">V &middot; A<sup>-1</sup></span></td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Section 4 -->
+            <section class="notes-section">
+                <h2>4. SI Prefixes</h2>
+                <p>Prefixes help manage very large or very small numbers. Use them to keep your data readable, but be careful when using them in calculations.</p>
+                
+                <table class="notes-table">
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Prefix Name</th>
+                            <th>Factor</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>G</td><td>giga</td><td>10<sup>9</sup></td><td>Gigahertz (GHz)</td></tr>
+                        <tr><td>M</td><td>mega</td><td>10<sup>6</sup></td><td>Megawatt (MW)</td></tr>
+                        <tr><td>k</td><td>kilo</td><td>10<sup>3</sup></td><td>Kilometer (km)</td></tr>
+                        <tr><td>m</td><td>milli</td><td>10<sup>-3</sup></td><td>Milliliter (mL)</td></tr>
+                        <tr><td>&mu;</td><td>micro</td><td>10<sup>-6</sup></td><td>Microgram (&mu;g)</td></tr>
+                        <tr><td>n</td><td>nano</td><td>10<sup>-9</sup></td><td>Nanometer (nm)</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Section 5 -->
+            <section class="notes-section">
+                <h2>5. Unit Conversions</h2>
+                <p>Conversions are essential when measurements are given in a format different from the one required for a final answer.</p>
+                
+                <h3 style="color: var(--physics-primary); margin-top: 2rem;">Internal System Conversions</h3>
+                <p>When converting area or volume, remember that the conversion factor must also be squared or cubed.</p>
+                <p><strong>Example:</strong> A cube with a side length (<span class="math-highlight">a</span>) of <span class="math-highlight">1m</span>:</p>
+                <ul>
+                    <li><span class="math-highlight">a = 1m = 100cm</span></li>
+                    <li><strong>Surface Area (<span class="math-highlight">A</span>):</strong> <span class="math-highlight">6a<sup>2</sup> = 6(100cm)<sup>2</sup> = 60,000cm<sup>2</sup></span></li>
+                    <li><strong>Volume (<span class="math-highlight">V</span>):</strong> <span class="math-highlight">a<sup>3</sup> = (1m)<sup>3</sup> = 1m<sup>3</sup> = (100cm)<sup>3</sup> = 1,000,000cm<sup>3</sup></span></li>
+                </ul>
+
+                <h3 style="color: var(--physics-primary); margin-top: 2rem;">Inter-System & Specialty Conversions</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                        <p style="margin:0;"><span class="math-highlight">1m<sup>3</sup> = 1000L</span></p>
+                        <p style="margin:0;"><span class="math-highlight">1dm<sup>3</sup> = 1L</span></p>
+                        <p style="margin:0;"><span class="math-highlight">1cm<sup>3</sup> = 1mL</span></p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                        <p style="margin:0;"><strong>1 AU:</strong> &approx; 1.5 &times; 10<sup>8</sup> km</p>
+                        <p style="margin:0;"><strong>1 ly:</strong> &approx; 9.5 &times; 10<sup>12</sup> km</p>
+                        <p style="margin:0;"><strong>1 pc:</strong> &approx; 3.1 &times; 10<sup>13</sup> km</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Success Tips -->
+            <div class="callout-box reveal">
+                <h3>💡 Success Tips</h3>
+                <ul>
+                    <li><strong>Track Your Units:</strong> Writing units throughout your calculations helps ensure your final result is logically correct.</li>
+                    <li><strong>Use Ratios:</strong> Treat conversion factors as fractions (e.g., <span class="math-highlight">1km / 1000m</span>) to cancel out units easily.</li>
+                    <li><strong>Calculator Use:</strong> Some calculators handle these automatically, but always verify if your specific model is allowed in your exam or competition.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="dynamic-footer reveal">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../../../../../logo.png" alt="Strata STEM Guide Logo">
+                    </div>
+                    <p>Sri Lanka's premier destination for high-end academic excellence.</p>
+                </div>
+            </div>
+            <div class="footer-bottom" style="padding-top: 1rem;">
+                <p>&copy; 2026 Strata STEM Guide ACADEMY. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../../../../../main.js"></script>
+</body>
+
+</html>
