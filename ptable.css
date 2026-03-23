@@ -1,0 +1,449 @@
+/* Custom Clean-Room Periodic Table Styles - Strata STEM Guide */
+
+:root {
+    /* Liquid Glass Transparent Neon Colors */
+    --cat-alkali: rgba(245, 158, 11, 0.25); /* Amber */
+    --cat-alkaline: rgba(234, 179, 8, 0.25); /* Yellow */
+    --cat-transition: rgba(239, 68, 68, 0.25); /* Red */
+    --cat-post-transition: rgba(59, 130, 246, 0.25); /* Blue */
+    --cat-metalloid: rgba(16, 185, 129, 0.25); /* Emerald */
+    --cat-nonmetal: rgba(132, 204, 22, 0.25); /* Lime */
+    --cat-noble: rgba(168, 85, 247, 0.25); /* Purple */
+    --cat-lanthanoid: rgba(217, 119, 6, 0.25); /* Orange/Brown */
+    --cat-actinoid: rgba(236, 72, 153, 0.25); /* Pink */
+    --cat-unknown: rgba(100, 116, 139, 0.25); /* Slate */
+
+    /* Base Design Tokens */
+    --pt-bg: transparent;
+    --pt-panel-bg: rgba(20, 22, 28, 0.4);
+    --pt-border: rgba(255, 255, 255, 0.12);
+    --pt-text: #e2e8f0;
+    --pt-text-dim: #94a3b8;
+    
+    /* Grid Math */
+    --grid-gap: 6px;
+    --cell-width: clamp(40px, 3.2vw, 75px);
+}
+
+body.custom-pt-body {
+    margin: 0;
+    padding-top: 130px; /* Clears navbar */
+    background: #010204; /* Deep space black enforcing dark mode over global white body */
+    color: var(--pt-text);
+    font-family: 'Inter', sans-serif;
+    overflow-x: auto;
+}
+
+/* Base App Layout */
+.pt-app-container {
+    display: flex;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Sidebar Properties */
+.pt-sidebar {
+    width: 25vw;
+    min-width: 320px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 5;
+}
+
+/* Glass panel utility */
+.glass-panel, .pt-properties, .pt-closeup {
+    background: var(--pt-panel-bg);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--pt-border);
+    border-radius: 12px;
+}
+
+/* Giant Cell display */
+.pt-closeup {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    aspect-ratio: 1.1;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.cl-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+}
+
+.cl-symbol {
+    font-family: 'Outfit', sans-serif;
+    font-size: 6rem;
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+}
+
+.cl-name {
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Scrollable Property List */
+.pt-properties {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.prop-dropdown-wrap {
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--pt-border);
+}
+
+.prop-view-select {
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+    color: white;
+    border: 1px solid var(--pt-border);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.prop-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.prop-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.prop-list li:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.p-label {
+    color: var(--pt-text-dim);
+}
+
+.p-val {
+    font-weight: 500;
+    text-align: right;
+}
+
+/* Temp Inputs */
+.state-ctrls {
+    display: flex;
+    background: rgba(0,0,0,0.2);
+    border-radius: 4px;
+    border: 1px solid var(--pt-border);
+    overflow: hidden;
+}
+
+.state-ctrls input {
+    background: transparent;
+    border: none;
+    color: white;
+    width: 60px;
+    text-align: right;
+    padding: 4px;
+    font-family: inherit;
+}
+
+.state-ctrls select {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: white;
+    padding: 4px;
+    font-family: inherit;
+}
+
+/* Phase Colors */
+.phase-solid { color: #e2e8f0; }
+.phase-liquid { color: #60a5fa; }
+.phase-gas { color: #f87171; }
+.phase-unknown { color: #94a3b8; }
+
+/* Main Right Layout */
+.pt-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 900px;
+}
+
+/* Toolbar Config */
+.pt-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+}
+
+.toolbar-label {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--pt-text-dim);
+}
+
+.slider-track-wrap {
+    flex-grow: 1;
+    height: 12px;
+    border-radius: 6px;
+    background: linear-gradient(to right, #60a5fa, #f8fafc, #fcd34d, #f97316, #ef4444);
+    display: flex;
+    align-items: center;
+}
+
+.styled-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background: transparent;
+    margin: 0;
+}
+
+.styled-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 8px;
+    background: white;
+    border-radius: 2px;
+    cursor: grab;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.temp-readouts {
+    display: flex;
+    gap: 15px;
+    font-size: 0.95rem;
+    font-family: monospace;
+}
+
+/* Custom CSS Grid Logic */
+.pt-grid-area {
+    position: relative;
+    display: grid;
+    /* 1 period column + 18 element columns */
+    grid-template-columns: 20px repeat(18, minmax(0, 1fr));
+    grid-template-rows: 20px repeat(7, minmax(var(--cell-width), auto)) 15px repeat(2, minmax(var(--cell-width), auto));
+    row-gap: 12px;
+    column-gap: 6px;
+    justify-content: start;
+}
+
+/* Structural elements */
+.grid-group-label {
+    grid-row: 1;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--pt-text-dim);
+    align-self: end;
+}
+.grid-period-label {
+    grid-column: 1;
+    text-align: right;
+    font-size: 0.75rem;
+    color: var(--pt-text-dim);
+    align-self: center;
+    padding-right: 5px;
+}
+
+/* Grid Cards */
+.ele-card {
+    border: 1px solid var(--pt-border);
+    border-radius: 6px;
+    min-height: var(--cell-width);
+    aspect-ratio: 1 / 1.15; /* Allow taller proportions so text doesn't overflow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6px 4px; /* More vertical breathing room */
+    cursor: pointer;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.ele-card:hover, .ele-card.active, .ele-card.locked {
+    transform: scale(1.15);
+    z-index: 100;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    border-color: white;
+}
+.ele-card.locked {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* Card typography matching requested density */
+.ele-num { font-size: 0.6rem; opacity: 0.8; height: 10px; }
+.ele-sym { font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 800; line-height: 1.1; margin: 2px 0; text-align: center;}
+.ele-name { font-size: clamp(0.4rem, 0.6vw, 0.55rem); letter-spacing: -0.2px; opacity: 0.8; text-align: center; line-height: 1.1; overflow-wrap: break-word;}
+.ele-mass { font-size: clamp(0.45rem, 0.55vw, 0.55rem); opacity: 0.6; text-align: center; line-height: 1;}
+
+/* Color Assignment Classes */
+.cat-alkali { background-color: var(--cat-alkali); }
+.cat-alkaline { background-color: var(--cat-alkaline); }
+.cat-lanthanoid { background-color: var(--cat-lanthanoid); }
+.cat-actinoid { background-color: var(--cat-actinoid); }
+.cat-transition { background-color: var(--cat-transition); }
+.cat-post-transition { background-color: var(--cat-post-transition); }
+.cat-metalloid { background-color: var(--cat-metalloid); }
+.cat-nonmetal { background-color: var(--cat-nonmetal); }
+.cat-noble { background-color: var(--cat-noble); }
+.cat-unknown { background-color: var(--cat-unknown); }
+
+/* The Central Legend Block */
+.pt-legend-box {
+    grid-column: 4 / span 10;
+    grid-row: 2 / span 3;
+    display: flex;
+    padding: 20px 25px; /* Give it more space */
+    gap: 20px;
+    font-size: 0.85rem;
+    align-self: center; /* Center it nicely in the empty space */
+    justify-self: center;
+    border-radius: 12px;
+}
+
+.legend-states {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.state-item { display: flex; gap: 8px; align-items: center; }
+.state-item span { width: 20px; font-family: 'Outfit', sans-serif; font-weight: 800; text-align: center; font-size: 1rem;}
+
+.sym-solid { color: var(--pt-text); }
+.sym-liquid { color: #60a5fa; }
+.sym-gas { color: #f87171; }
+.sym-unknown { color: var(--cat-unknown); }
+
+.legend-series {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto 1fr 1fr;
+    gap: 8px; /* Space between tags */
+    flex-grow: 1;
+}
+
+.series-header {
+    text-align: center;
+    border-bottom: 2px solid white;
+    padding-bottom: 4px;
+    grid-row: 1;
+}
+.metals-header { grid-column: 1 / span 4; }
+.metalloids-header { grid-column: 5; }
+.nonmetals-header { grid-column: 6; }
+
+.series-tag {
+    padding: 5px 8px; /* Breathing room for the text */
+    text-align: center;
+    border: 1px solid var(--pt-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    line-height: 1.2;
+}
+
+/* Legend sub-assignments */
+.cat-alkali { grid-column: 1; grid-row: 2; height: 100%; border-radius: 4px; backdrop-filter: blur(10px); }
+.cat-alkaline { grid-column: 2; grid-row: 2; border-radius: 4px; backdrop-filter: blur(10px); }
+.cat-lanthanoid { grid-column: 3; grid-row: 2; border-radius: 4px; backdrop-filter: blur(10px); }
+.cat-actinoid { grid-column: 3; grid-row: 3; border-radius: 4px; backdrop-filter: blur(10px); }
+.cat-transition { grid-column: 4; grid-row: 2 / span 2; border-radius: 4px; backdrop-filter: blur(10px); }
+.cat-post-transition { grid-column: 5; grid-row: 2; border-radius: 4px; backdrop-filter: blur(10px); }
+.cat-metalloid { grid-column: 5; grid-row: 3; border-radius: 4px; backdrop-filter: blur(10px); }
+.cat-nonmetal { grid-column: 6; grid-row: 2; border-radius: 4px; backdrop-filter: blur(10px); }
+.cat-noble { grid-column: 6; grid-row: 3; border-radius: 4px; backdrop-filter: blur(10px); }
+
+/* The Legend Info Layout Block */
+.grid-guide-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5px;
+    line-height: 1.1;
+    opacity: 0.8;
+}
+
+/* Responsive break points */
+@media (max-width: 1400px) {
+    :root {
+        --grid-gap: 4px;
+        --cell-width: clamp(35px, 4vw, 55px);
+    }
+    .pt-legend-box { padding: 10px; gap: 10px; }
+    .ele-card { padding: 3px; border-radius: 4px; }
+}
+
+@media (max-width: 1200px) {
+    .pt-app-container { flex-direction: column; }
+    .pt-sidebar { width: 100%; max-width: none; flex-direction: row; align-items: stretch; height: 350px;}
+    .pt-closeup { width: 350px; aspect-ratio: unset;}
+    .pt-properties { overflow-y: auto;}
+    .pt-main { min-width: 100%; }
+}
+
+@media (max-width: 900px) {
+    :root {
+        --grid-gap: 4px; /* Give it back comfortable gaps */
+        --cell-width: 45px; /* Stop shrinking below readable limits */
+    }
+    
+    /* Allow native browser horizontal panning/swiping over the grid */
+    .pt-app-container {
+        min-width: 900px; 
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .ele-num { font-size: 0.5rem; height: 10px;}
+    .ele-sym { font-size: 1rem; margin: 0;}
+    .ele-name { font-size: 0.45rem; line-height: 1.1;}
+    .ele-mass { font-size: 0.5rem; }
+    .grid-guide-block { font-size: 0.8em; }
+    
+    .pt-legend-box {
+        grid-column: 4 / span 9;
+        font-size: 0.7rem;
+        gap: 15px;
+        padding: 10px;
+    }
+    .legend-states { gap: 4px; font-size: 0.75rem; }
+    
+    .series-tag {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        padding: 6px 4px;
+        font-size: 0.65rem;
+    }
+    .series-header { font-size: 0.65rem; }
+    
+    .pt-sidebar { height: auto; flex-direction: row; }
+    .pt-closeup { width: 350px; aspect-ratio: unset; flex-direction: column; align-items: stretch;}
+    .cl-symbol { font-size: 6rem; }
+}
