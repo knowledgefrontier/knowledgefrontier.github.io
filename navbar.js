@@ -15,7 +15,7 @@ function initNavbar(options = {}) {
             <nav class="desktop-only">
                 <ul class="island-nav-links">
                     <li><a href="${rootPath}index.html" class="reveal ${activePage === 'home' ? 'active' : ''}">HOME</a></li>
-                   
+                    <li><a href="${rootPath}Ptable.html" class="reveal ${activePage === 'ptable' ? 'active' : ''}">PTABLE</a></li>
                     <li><a href="${rootPath}subjects.html" class="reveal ${activePage === 'olympiad' ? 'active' : ''}">OLYMPIAD GUIDE</a></li>
                     <li><a href="${rootPath}team.html" class="reveal ${activePage === 'team' ? 'active' : ''}">OUR TEAM</a></li>
                     <li class="has-dropdown">
@@ -50,6 +50,7 @@ function initNavbar(options = {}) {
     <div class="mobile-nav">
         <ul class="mobile-nav-links">
             <li><a href="${rootPath}index.html">HOME</a></li>
+            <li><a href="${rootPath}Ptable.html">PTABLE</a></li>
             <li><a href="${rootPath}subjects.html">OLYMPIAD GUIDE</a></li>
             <li><a href="${rootPath}team.html">OUR TEAM</a></li>
             <li><a href="${rootPath}Grade 6 to 13.html">GRADE 6-13</a></li>
