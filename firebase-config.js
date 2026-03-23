@@ -3,12 +3,12 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBpCRNZmPir11gAbva-bPtH-SWXyhrExi4",
-  authDomain: "knowledgefrontier1.firebaseapp.com",
-  projectId: "knowledgefrontier1",
-  storageBucket: "knowledgefrontier1.firebasestorage.app",
-  messagingSenderId: "441154297343",
-  appId: "1:441154297343:web:bd12910a37911bdcea9bca"
+  apiKey: "AIzaSyBOxth1Pd0AWmZQ5_XBvyOaUh31SmppRMQ",
+  authDomain: "stratastemguide1.firebaseapp.com",
+  projectId: "stratastemguide1",
+  storageBucket: "stratastemguide1.firebasestorage.app",
+  messagingSenderId: "250867824491",
+  appId: "1:250867824491:web:aab687e43025c1ebb4fe2e"
 };
 
 // Initialize Firebase
